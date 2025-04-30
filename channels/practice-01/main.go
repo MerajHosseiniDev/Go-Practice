@@ -25,6 +25,5 @@ func main() {
 			break
 		}
 		fmt.Println(value)
-		fmt.Println("i finished first channel practice")
 	}
 }
