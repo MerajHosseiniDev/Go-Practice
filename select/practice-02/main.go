@@ -21,12 +21,13 @@ func main() {
 		slow <- message2
 	}()
 
-	select {
-	case msg1 := <- slow:
-		fmt.Println("Recieved message from slow channel: ", msg1)
-	case msg2 := <- fast:
-		fmt.Println("Recieved message from fast channel: ", msg2)
-	default:
-		fmt.Println("No message recieved!")
+	
+	for i:=0; i<2; i++ {
+		select {
+		case msg1 := <- slow:
+			fmt.Println("Recieved message from slow channel: ", msg1)
+		case msg2 := <- fast:
+			fmt.Println("Recieved message from fast channel: ", msg2)
+		}
 	}
 }
