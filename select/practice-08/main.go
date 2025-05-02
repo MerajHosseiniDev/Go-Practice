@@ -29,12 +29,18 @@ func main() {
 	go task2(ch2)
 	go task3(ch3)
 
-	select {
-	case msg1 := <-ch1:
-		fmt.Println("Recieved: ", msg1)
-	case msg2 := <-ch2:
-		fmt.Println("Recieved: ", msg2)
-	case msg3 := <-ch3:
-		fmt.Println("Recieved: ", msg3)
+	recieved := 0
+	for recieved < 3 {
+		select {
+		case msg1 := <-ch1:
+			fmt.Println("Recieved: ", msg1)
+			recieved ++
+		case msg2 := <-ch2:
+			fmt.Println("Recieved: ", msg2)
+			recieved ++
+		case msg3 := <-ch3:
+			fmt.Println("Recieved: ", msg3)
+			recieved ++
+		}
 	}
 }
