@@ -15,8 +15,7 @@ It’s not polished production code — it’s a reflection of my learning proce
 
 ## 🎯 My Learning Path
 
-I started programming after finishing military service, choosing not to go to university.  
-Instead, I committed to learning programming from scratch — especially **Go**, which I now use as my main language.
+I committed to learning programming from scratch — especially **Go**, which I now use as my main language.
 
 I follow the [Golang roadmap](https://roadmap.sh/golang) and have already covered:
 - Core data types (int, float, string, bool, rune, byte)
