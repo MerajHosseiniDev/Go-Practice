@@ -10,7 +10,7 @@ type Counter struct {
 	mu	  sync.Mutex
 }
 
-func (c *Counter) increament(wg *sync.WaitGroup){
+func (c *Counter) increment(wg *sync.WaitGroup){
 	defer wg.Done()
 	c.mu.Lock()
 	defer c.mu.Unlock()
@@ -23,7 +23,7 @@ func main() {
 
 	for i:=0; i < 100; i++ {
 		wg.Add(1)
-		go counter.increament(&wg)
+		go counter.increment(&wg)
 	}
 
 	wg.Wait()
